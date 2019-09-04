@@ -30,8 +30,7 @@ $trading_id = 'xxxxxxxx'; // 订单号
 $payment_amount = 100; // 金额
 $result = $p->paySend($split_count, $card_token, $trading_id, $payment_amount);
 ```
-#### 示例
-![图片](https://dev.tencent.com/api/project/4659439/files/5770857/imagePreview)
+
 
 ### 发送后支付请求
 
@@ -63,8 +62,7 @@ $goods_list = [
 $result = $p->afterPaySend($trading_id, $payment_amount, $shop_order_date, $customer_name_kanji, $customer_name_kana,
             $customer_email, $customer_zip_code, $customer_address, $customer_tel, $goods_list);
 ```
-#### 示例
-![图片](https://dev.tencent.com/api/project/4659439/files/5770880/imagePreview)
+
 **备注： 需要额外注意返回的 pay_code 为 15007 的情况，此时表示请求审核中**
 
 ### 发送后支付取消请求
@@ -74,8 +72,6 @@ $payment_id = 'xxxxxxx'; // 交易 id
 $result = $p->afterPayCancel($trading_id, $payment_id);
 ```
 
-#### 示例
-![图片](https://dev.tencent.com/api/project/4659439/files/5770888/imagePreview)
 
 ### 发送后支付确认请求
 ```
@@ -86,7 +82,5 @@ $payment_id = 'xxxxxxx'; // 交易 id
 $result = $p->afterPayConfirm($delivery_company_code, $delivery_slip_no, $trading_id, $payment_id);
 ```
 
-#### 示例
-![图片](https://dev.tencent.com/api/project/4659439/files/5770891/imagePreview)
 
-**图片链接损坏，以下为腾讯云文档 <a href="https://dev.tencent.com/s/d6174133-c098-4426-83a6-307d0ee6608a">跳转</a>**
+**以下为腾讯云文档 <a href="https://dev.tencent.com/s/d6174133-c098-4426-83a6-307d0ee6608a">跳转</a>**
