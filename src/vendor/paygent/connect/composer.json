@@ -1,0 +1,13 @@
+{
+    "name": "paygent/connect",
+    "description": "paygent connect module",
+    "license": "proprietary",
+    "require": {
+        "symfony/yaml" : ">=v2.8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PaygentModule\\": "src/paygent_module"
+        }
+    }
+}

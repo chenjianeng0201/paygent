@@ -1,0 +1,17 @@
+{
+    "name": "chenjianeng0201/paygent",
+    "description": "A paygent SDK.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenjianeng0201",
+            "email": "chenjianeng0201@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Chenjianeng0201\\Paygent\\": "./src"
+        }
+    }
+}

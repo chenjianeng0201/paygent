@@ -1,0 +1,401 @@
+const:
+    #電文パラメータ Key Length
+    PaygentB2BModule__TELEGRAM_KEY_LENGTH: 30
+    #電文パラメータ Valeu Length
+    PaygentB2BModule__TELEGRAM_VALUE_LENGTH: 102400
+    #電文長：102400byte（ファイル決済以外）
+    PaygentB2BModule__TELEGRAM_LENGTH: 102400
+    #電文長：10MB（ファイル決済時）
+    PaygentB2BModule__TELEGRAM_LENGTH_FILE: 10485760
+    #接続ID
+    PaygentB2BModule__CONNECT_ID_KEY: "connect_id"
+    #接続パスワード
+    PaygentB2BModule__CONNECT_PASSWORD_KEY: "connect_password"
+    #電文種別ID
+    PaygentB2BModule__TELEGRAM_KIND_KEY: "telegram_kind"
+    #最大検索数
+    PaygentB2BModule__LIMIT_COUNT_KEY: "limit_count"
+    #取引ファイルデータ
+    PaygentB2BModule__DATA_KEY: "data"
+    #処理結果：1
+    PaygentB2BModule__RESULT_STATUS_ERROR: "1"
+    #レスポンスコード：9003
+    PaygentB2BModule__RESPONSE_CODE_9003: "9003"
+    #電文種別：201（ファイル決済結果照会）
+    PaygentB2BModule__TELEGRAM_KIND_FILE_PAYMENT_RES: "201"
+    #プロパティファイル名 SANDBOX
+    PaygentB2BModuleResources__PROPERTIES_FILE_NAME_SANDBOX: "/Sandbox/modenv_properties.php"
+    #プロパティファイル名 LIVE
+    PaygentB2BModuleResources__PROPERTIES_FILE_NAME_LIVE: "/Live/modenv_properties.php"
+    #照会系電文種別の区切り文字
+    PaygentB2BModuleResources__TELEGRAM_KIND_SEPARATOR: ","
+    #電文種別の先頭桁数（接続先URL取得）
+    PaygentB2BModuleResources__TELEGRAM_KIND_FIRST_CHARS: 2
+    #クライアント証明書ファイルパス
+    PaygentB2BModuleResources__CLIENT_FILE_PATH: "paygentB2Bmodule.client_file_path"
+    #クライアント証明書未使用設定
+    PaygentB2BModuleResources__NOT_USE_CLIENT_CERT: "paygentB2Bmodule.not_use_client_cert"
+    #CA証明書ファイルパス
+    PaygentB2BModuleResources__CA_FILE_PATH: "paygentB2Bmodule.ca_file_path"
+    #CA証明書未使用設定
+    PaygentB2BModuleResources__NOT_USE_CA_CERT: "paygentB2Bmodule.not_use_ca_cert"
+    #Proxyサーバ名
+    PaygentB2BModuleResources__PROXY_SERVER_NAME: "paygentB2Bmodule.proxy_server_name"
+    #ProxyIPアドレス
+    PaygentB2BModuleResources__PROXY_SERVER_IP: "paygentB2Bmodule.proxy_server_ip"
+    #Proxyポート番号
+    PaygentB2BModuleResources__PROXY_SERVER_PORT: "paygentB2Bmodule.proxy_server_port"
+    #マーチャントID
+    PaygentB2BModuleResources__MERCHANT_ID: "paygentB2Bmodule.merchant_id"
+    #デフォルトID
+    PaygentB2BModuleResources__DEFAULT_ID: "paygentB2Bmodule.default_id"
+    #デフォルトパスワード
+    PaygentB2BModuleResources__DEFAULT_PASSWORD: "paygentB2Bmodule.default_password"
+    #タイムアウト値
+    PaygentB2BModuleResources__TIMEOUT_VALUE: "paygentB2Bmodule.timeout_value"
+    #ログ出力先
+    PaygentB2BModuleResources__LOG_OUTPUT_PATH: "paygentB2Bmodule.log_output_path"
+    #照会MAX件数
+    PaygentB2BModuleResources__SELECT_MAX_CNT: "paygentB2Bmodule.select_max_cnt"
+    #照会系電文種別ID
+    PaygentB2BModuleResources__TELEGRAM_KIND_REFS: "paygentB2Bmodule.telegram_kind.ref"
+    #接続先URL（共通）
+    PaygentB2BModuleResources__URL_COMM: "paygentB2Bmodule.url."
+    #デバッグオプション
+    PaygentB2BModuleResources__DEBUG_FLG: "paygentB2Bmodule.debug_flg"
+    #PaygentB2BModuleConnectException
+    PaygentB2BModuleConnectException__serialVersionUID: 1
+    #モジュールパラメータエラー
+    PaygentB2BModuleConnectException__MODULE_PARAM_REQUIRED_ERROR: "E02001"
+    #電文要求パラメータエラー
+    PaygentB2BModuleConnectException__TEREGRAM_PARAM_REQUIRED_ERROR: "E02002"
+    #電文要求パラメータ固定値想定外エラー
+    PaygentB2BModuleConnectException__TEREGRAM_PARAM_OUTSIDE_ERROR: "E02003"
+    #証明書エラー
+    PaygentB2BModuleConnectException__CERTIFICATE_ERROR: "E02004"
+    #決済センター接続エラー
+    PaygentB2BModuleConnectException__KS_CONNECT_ERROR: "E02005"
+    #応答対応種別エラー
+    PaygentB2BModuleConnectException__RESPONSE_TYPE_ERROR: "E02007"
+    #PaygentB2BModuleException.php
+    PaygentB2BModuleException__serialVersionUID: 1
+    #設定ファイルなしエラー
+    PaygentB2BModuleException__RESOURCE_FILE_NOT_FOUND_ERROR: "E01001"
+    #設定ファイル不正エラー
+    PaygentB2BModuleException__RESOURCE_FILE_REQUIRED_ERROR: "E01002"
+    #その他のエラー
+    PaygentB2BModuleException__OTHER_ERROR: "E01901"
+    #CSV出力エラー
+    PaygentB2BModuleException__CSV_OUTPUT_ERROR: "E01004"
+    #取引ファイルエラー
+    PaygentB2BModuleException__FILE_PAYMENT_ERROR: "E01005"
+    #デフォルトの項目区切り文字
+    CSVTokenizer__DEF_SEPARATOR: ','
+    #デフォルトの項目データ囲み文字
+    CSVTokenizer__DEF_ITEM_ENVELOPE: '"'
+    #項目データ囲み文字(囲み自体なし)
+    CSVTokenizer__NO_ITEM_ENVELOPE: chr(0)
+    #ファイル出力用Encoding Shift_JIS
+    CSVWriter__ENCODING_SJIS: "Shift_JIS"
+    #ファイル出力用Encoding EUC-JP
+    CSVWriter__ENCODING_EUC: "EUC_JP"
+    #ファイル出力用Encoding MS932
+    CSVWriter__ENCODING_MS932: "SJIS-win"
+    #ファイル出力時の改行コード
+    CSVWriter__WINDOWS_NEWLINE: "\r\n"
+    #ファイル出力時の改行コード
+    CSVWriter__UNIX_NEWLINE: "\n"
+    #ファイル出力時の改行コード
+    CSVWriter__MAC_NEWLINE: "\r"
+    HttpsRequestSender__CURLE_COULDNT_CONNECT: 7
+    HttpsRequestSender__CURLE_SSL_CERTPROBLEM: 58
+    HttpsRequestSender__CURLE_SSL_CACERT: 60
+    HttpsRequestSender__CURLE_SSL_CACERT_BADFILE: 77
+    HttpsRequestSender__CURLE_HTTP_RETURNED_ERROR: 22
+    #HTTP POST 通信用固定値
+    HttpsRequestSender__POST: "POST"
+    #HTTPプロトコルを表す定数
+    HttpsRequestSender__HTTP: "HTTP"
+    #HTTP/1.0を表す定数
+    HttpsRequestSender__HTTP_1_0: "HTTP/1.0"
+    #HTTP通信の成功コード
+    HttpsRequestSender__HTTP_1_0_200: "HTTP/1.0 200"
+    #HTTP通信の成功コード：200
+    HttpsRequestSender__HTTP_SUCCESS: 200
+    #HTTP通信の成功コード：206
+    HttpsRequestSender__HTTP_PARTIAL_CONTENT: 206
+    #電文長
+    HttpsRequestSender__TELEGRAM_LENGTH: 10240
+    #HTTPS Default Port
+    HttpsRequestSender__DEFAULT_PORT: 443
+    #リクエスト・レスポンスの改行コード
+    HttpsRequestSender__CRLF: "\r\n"
+    #デフォルトのエンコーディング
+    HttpsRequestSender__DEFAULT_ENCODING: "SJIS-win"
+    #HTTPステータスコード変数の初期値
+    HttpsRequestSender__HTTP_STATUS_INIT_VALUE: -1
+    #ステータスコードの長さ
+    HttpsRequestSender__REGEXPSTATUS_LEN: 3
+    #Content-Length
+    HttpsRequestSender__CONTENT_LENGTH: "Content-Length"
+    #User-Agent
+    HttpsRequestSender__USER_AGENT: "User-Agent"
+    #Content-Type
+    HttpsRequestSender__CONTENT_TYPE: "Content-Type=application/x-www-form-urlencoded"
+    HttpsRequestSender__HTTP_ENCODING: "charset=Windows-31J"
+    #マスク文字
+    HttpsRequestSender__MASK_STRING: "X"
+    #行番号（ヘッダー部）= "1"
+    FilePaymentResponseDataImpl__LINENO_HEADER: "1"
+    #レコード区分 位置: 0
+    FilePaymentResponseDataImpl__LINE_RECORD_DIVISION: 0
+    #ヘッダー部 処理結果 位置 6
+    FilePaymentResponseDataImpl__LINE_HEADER_RESULT: 6
+    #ヘッダー部 レスポンスコード 位置: 7
+    FilePaymentResponseDataImpl__LINE_HEADER_RESPONSE_CODE: 7
+    #ヘッダー部 レスポンス詳細 位置: 8
+    FilePaymentResponseDataImpl__LINE_HEADER_RESPONSE_DETAIL: 8
+    #改行文字
+    FilePaymentResponseDataImpl__LINE_SEPARATOR: "\r\n"
+    #応答電文用区切り文字
+    PaymentResponseDataImpl__PROPERTIES_REGEX: "="
+    #応答電文用区切り数
+    PaymentResponseDataImpl__PROPERTIES_REGEX_COUNT: 2
+    #改行文字
+    PaymentResponseDataImpl__LINE_SEPARATOR: "\r\n"
+    #処理結果
+    ResponseData__RESULT: "result"
+    #レスポンスコード
+    ResponseData__RESPONSE_CODE: "response_code"
+    #レスポンス詳細
+    ResponseData__RESPONSE_DETAIL: "response_detail"
+    #HTML項目
+    ResponseData__HTML_ITEM: "_html"
+    #行番号（ヘッダー部）= "1"
+    ReferenceResponseDataImpl__LINENO_HEADER: "1"
+    #行番号（データヘッダー部）: "2"
+    ReferenceResponseDataImpl__LINENO_DATA_HEADER: "2"
+    #行番号（データ部）: "3"
+    ReferenceResponseDataImpl__LINENO_DATA: "3"
+    #行番号（トレーラー部）: "4"
+    ReferenceResponseDataImpl__LINENO_TRAILER: "4"
+    #レコード区分 位置: 0
+    ReferenceResponseDataImpl__LINE_RECORD_DIVISION: 0
+    #ヘッダー部 処理結果 位置 1
+    ReferenceResponseDataImpl__LINE_HEADER_RESULT: 1
+    #ヘッダー部 レスポンスコード 位置: 2
+    ReferenceResponseDataImpl__LINE_HEADER_RESPONSE_CODE: 2
+    #ヘッダー部 レスポンス詳細 位置: 3
+    ReferenceResponseDataImpl__LINE_HEADER_RESPONSE_DETAIL: 3
+    #トレーラー部 データ件数 位置: 1
+    ReferenceResponseDataImpl__LINE_TRAILER_DATA_COUNT: 1
+    #改行文字
+    ReferenceResponseDataImpl__LINE_SEPARATOR: "\r\n"
+    # 決済種別
+    SETTLEMENT_LINK: 1
+    SETTLEMENT_MODULE: 2
+    SETTLEMENT_MIX: 3
+    # 支払いの種類 paymenttype
+    PAY_PAYGENT_CREDIT: "1"
+    PAY_PAYGENT_CONVENI_NUM: "2"
+    PAY_PAYGENT_CONVENI_CALL: "3"
+    PAY_PAYGENT_ATM: "4"
+    PAY_PAYGENT_BANK: "5"
+    PAY_PAYGENT_CAREER: "6"
+    PAY_PAYGENT_EMONEY: "7"
+    PAY_PAYGENT_YAHOOWALLET: "8"
+    PAY_PAYGENT_LINK: "50"
+    PAY_PAYGENT_VIRTUAL_ACCOUNT: "9"
+    PAY_PAYGENT_LATER_PAYMENT: "10"
+    PAYGENT_ATM: '010'
+    PAYGENT_CREDIT: '020'
+    PAYGENT_CREDIT_PROCESSING: '0201'
+    PAYGENT_AUTH_CANCEL: '021'
+    PAYGENT_CARD_COMMIT: '022'
+    PAYGENT_CARD_COMMIT_CANCEL: '023'
+    PAYGENT_CARD_COMMIT_REVICE: '029'
+    PAYGENT_CARD_COMMIT_REVICE_PROCESSING: '0291'
+    PAYGENT_CARD_3D: '024'
+    PAYGENT_CARD_STOCK_SET: '025'
+    PAYGENT_CARD_STOCK_DEL: '026'
+    PAYGENT_CARD_STOCK_GET: '027'
+    PAYGENT_CONVENI_NUM: '030'
+    PAYGENT_CONVENI_CALL: '040'
+    PAYGENT_BANK: '060'
+    PAYGENT_CAREER: '100'
+    PAYGENT_CAREER_COMMIT: '101'
+    PAYGENT_CAREER_COMMIT_CANCEL: '102'
+    PAYGENT_CAREER_COMMIT_REVICE: '103'
+    PAYGENT_CAREER_COMMIT_AUTH: '104'
+    PAYGENT_EMONEY: '150'
+
+    PAYGENT_EMONEY_COMMIT_CANCEL: '152'
+    PAYGENT_EMONEY_COMMIT_REVICE: '153'
+    PAYGENT_YAHOOWALLET: '160'
+    PAYGENT_YAHOOWALLET_COMMIT: '161'
+    PAYGENT_YAHOOWALLET_COMMIT_CANCEL: '162'
+    PAYGENT_YAHOOWALLET_COMMIT_REVICE: '163'
+    PAYGENT_VIRTUAL_ACCOUNT: '070'
+    PAYGENT_LATER_PAYMENT: '220'
+    PAYGENT_LATER_PAYMENT_CANCEL: '221'
+    PAYGENT_LATER_PAYMENT_CLEAR: '222'
+    PAYGENT_LATER_PAYMENT_REDUCTION: '223'
+    PAYGENT_LATER_PAYMENT_BILL_REISSUE: '224'
+    PAYGENT_LATER_PAYMENT_ST_AUTHORIZE_NG: '220_11'
+    PAYGENT_LATER_PAYMENT_ST_AUTHORIZE_RESERVE: '220_12'
+    PAYGENT_LATER_PAYMENT_ST_AUTHORIZED: '220_20'
+    PAYGENT_LATER_PAYMENT_ST_AUTHORIZE_CANCEL: '220_32'
+    PAYGENT_LATER_PAYMENT_ST_AUTHORIZE_EXPIRE: '220_33'
+    PAYGENT_LATER_PAYMENT_ST_CLEAR_REQ_FIN: '220_35'
+    PAYGENT_LATER_PAYMENT_ST_SALES_RESERVE: '220_36'
+    PAYGENT_LATER_PAYMENT_ST_CLEAR: '220_40'
+    PAYGENT_LATER_PAYMENT_ST_CLEAR_SALES_CANCEL_INVALIDITY: '220_41'
+    PAYGENT_LATER_PAYMENT_ST_SALES_CANCEL: '220_60'
+
+    PAYGENT_CAREER_D: '100_1'
+    PAYGENT_CAREER_A: '100_2'
+    PAYGENT_CAREER_S: '100_3'
+    PAYGENT_CAREER_AUTH_D: '104_1'
+    PAYGENT_CAREER_AUTH_A: '104_2'
+
+    PAYGENT_EMONEY_W: '150_1'
+
+    PAYGENT_LINK: 'link'
+
+    # バッチで使用する。
+    PAYGENT_REF: '091'
+
+    # バッチで使用する決済種別CD
+    PAYMENT_TYPE_ATM: '01'
+    PAYMENT_TYPE_CREDIT: '02'
+    PAYMENT_TYPE_CONVENI_NUM: '03'
+    PAYMENT_TYPE_BANK: '05'
+    PAYMENT_TYPE_CAREER: '06'
+    PAYMENT_TYPE_EMONEY: '11'
+    PAYMENT_TYPE_YAHOOWALLET: '12'
+    PAYMENT_TYPE_VIRTUAL_ACCOUNT: '07'
+    PAYMENT_TYPE_LATER_PAYMENT: '15'
+
+    # バッチで使用する決済ステータス
+    STATUS_PRE_REGISTRATION: '10'
+    STATUS_NG_AUTHORITY: '11'
+    STATUS_PAYMENT_EXPIRED: '12'
+    STATUS_3DSECURE_INTERRUPTION: '13'
+    STATUS_REGISTRATION_SUSPENDED: '15'
+    STATUS_PAYMENT_INVALIDITY_NO_CLEAR: '16'
+    STATUS_AUTHORITY_OK: '20'
+    STATUS_AUTHORITY_COMPLETED: '21'
+    STATUS_AUTHORITY_CANCELED: '32'
+    STATUS_AUTHORITY_EXPIRED: '33'
+    STATUS_PENDING_SALES: '36'
+    STATUS_NO_PENDING: '37'
+    STATUS_PRE_CLEARED: '40'
+    STATUS_PRE_CLEARED_EXPIRATION_CANCELLATION_SALES: '41'
+    STATUS_PRELIMINARY_PRE_DETECTION: '43'
+    STATUS_COMPLETE_CLEARED: '44'
+    STATUS_PRE_SALES_CANCELLATION: '60'
+    STATUS_PRELIMINARY_CANCELLATION: '61'
+    STATUS_COMPLETE_CANCELLATION: '62'
+    STATUS_REQUESTED: '10'
+    STATUS_AUTHORIZE_NG: '11'
+    STATUS_AUTHORIZE_RESERVE: '12'
+    STATUS_AUTHORIZED: '20'
+    STATUS_AUTHORIZE_CANCEL: '32'
+    STATUS_AUTHORIZE_EXPIRE: '33'
+    STATUS_CLEAR_REQ_FIN: '35'
+    STATUS_SALES_RESERVE: '36'
+    STATUS_CLEAR: '40'
+    STATUS_CLEAR_SALES_CANCEL_INVALIDITY: '41'
+    STATUS_SALES_CANCEL: '60'
+
+    # 無限ループを避ける
+    PAYGENT_REF_LOOP: 1000
+
+    # カートセッション状態管理キー
+    PAYGENT_CART_SESS_KEY: '_paygent_cart_sess_key_'
+
+    # 利用上限金額
+    CHARGE_MAX: 500000
+    SEVEN_CHARGE_MAX: 300000
+
+    # 電文バージョン
+    TELEGRAM_VERSION: '1.0'
+
+    # コンビニコード
+    CODE_SEVENELEVEN: "00C001"
+    CODE_LOWSON: "00C002"
+    CODE_MINISTOP: "00C004"
+    CODE_FAMILYMART: "00C005"
+    CODE_SUNKUS: "00C006"
+    CODE_CIRCLEK: "00C007"
+    CODE_YAMAZAKI: "00C014"
+    CODE_SEICOMART: "00C016"
+
+    # PC_MOBILE_TYPE
+    PC_MOBILE_TYPE_PC: "0"
+    PC_MOBILE_TYPE_SMARTPHONE: "4"
+
+    # キャリア種別
+    CAREER_MOBILE_TYPE_DOCOMO: "1"
+    CAREER_MOBILE_TYPE_AU: "2"
+    CAREER_MOBILE_TYPE_SOFTBANK: "3"
+    CAREER_TYPE_AU: "4"
+    CAREER_TYPE_DOCOMO: "5"
+    CAREER_TYPE_SOFTBANK: "6"
+
+    # 電話区分コード
+    TEL_HOME: "1"
+    TEL_CALL: "2"
+    TEL_DORMITORY: "3"
+    TEL_MOBILE: "5"
+
+    # 電子マネー種別
+    EMONEY_TYPE_WEBMONEY: "1"
+    EMONEY_TYPE_CHOCOMU: "2"
+
+    # 決済種別
+    NUMBERING_TYPE_CYCLE: 0
+    NUMBERING_TYPE_FIX: 1
+
+    # 結果取得区分
+    RESULT_GET_TYPE_WAIT: 0
+    RESULT_GET_TYPE_NO_WAIT: 1
+
+    # 審査結果通知メール
+    EXAM_RESULT_NOTIFICATION_TYPE_AUTO: 0
+    EXAM_RESULT_NOTIFICATION_TYPE_MANUAL: 1
+
+    # 自動キャンセル区分
+    AUTO_CANCEL_TYPE_WAIT: 0
+    AUTO_CANCEL_TYPE_NO_WAIT: 1
+
+    # 後払い決済 請求書再発行 依頼理由
+    CLIENT_REASON_CODE_DEFAULT: ""
+    CLIENT_REASON_CODE_BILL_LOSS: "01"
+    CLIENT_REASON_CODE_BILL_NO_DELIVERY: "02"
+    CLIENT_REASON_CODE_MOVE: "03"
+    CLIENT_REASON_CODE_OTHER: "99"
+
+    # 後払い決済 売上 運送会社コード
+    CARRIERS_COMPANY_CODE_DEFAULT: ""
+    CARRIERS_COMPANY_CODE_SAGAWA: "11"
+    CARRIERS_COMPANY_CODE_YAMATO: "12"
+    CARRIERS_COMPANY_CODE_SEINO: "14"
+    CARRIERS_COMPANY_CODE_REGISTERED: "15"
+    CARRIERS_COMPANY_CODE_YUPACK: "16"
+    CARRIERS_COMPANY_CODE_FUKUTSU: "18"
+    CARRIERS_COMPANY_CODE_SPECIFY_TIME: "28"
+    CARRIERS_COMPANY_CODE_ECOHAI: "27"
+
+    # 文字入力制限（byte）
+    PAYGENT_BANK_STEXT_LEN: "12"
+    PAYGENT_CONVENI_STEXT_LEN: "14"
+    PAYGENT_CONVENI_MTEXT_LEN: "20"
+    PAYGENT_TEL_ITEM_LEN: 11
+    PAYGENT_S_TEL_ITEM_LEN: 4
+    PAYGENT_LINK_STEXT_LEN: "12"
+    PAYGENT_VIRTUAL_ACCOUNT_STEXT_LEN: "48"
+    PAYGENT_VIRTUAL_ACCOUNT_MTEXT_LEN: "100"
+    log_realfile: /PATH/TO/WEB_ROOT/data/logs/site.log
+    max_log_quantity: 5
+    max_log_size: '1000000'
