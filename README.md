@@ -3,7 +3,7 @@
 ## 包含信用卡支付和后支付
 
 ## 安装
-composer required chenjianeng0201/paygent
+composer require chenjianeng0201/paygent:dev-master -vvv
 ## 配置
 需要拥有 Paygent 相关证书、私钥、及配置参数
 
