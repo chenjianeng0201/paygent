@@ -88,3 +88,5 @@ $result = $p->afterPayConfirm($delivery_company_code, $delivery_slip_no, $tradin
 
 #### 示例
 ![图片](https://dev.tencent.com/api/project/4659439/files/5770891/imagePreview)
+
+**图片链接损坏，以下为腾讯云文档 <a href="https://dev.tencent.com/s/d6174133-c098-4426-83a6-307d0ee6608a">跳转</a>**
