@@ -24,7 +24,7 @@ $p = new Paygent($env, $merchant_id, $connect_id, $connect_password, $pem, $crt,
 
 ### 发送信用卡支付请求
 ```
-$split_count = 'xxx'; 分期数
+$split_count = 'xxx'; // 分期数
 $card_token = 'xxxxxxxxx'; // token
 $trading_id = 'xxxxxxxx'; // 订单号
 $payment_amount = 100; // 金额
