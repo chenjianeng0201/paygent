@@ -98,6 +98,7 @@ $result = $p->afterPayConfirm($delivery_company_code, $delivery_slip_no, $tradin
     'token' => env('PAYGENT_TOKEN', ''), // 备注：此 token 为前台页面获取信用卡 token 时使用
     'pem' => env('PAYGENT_PEM', ''),
     'crt' => env('PAYGENT_CRT', ''),
+    'telegram_version' => env('PAYGENT_TELEGRAM_VERSION', '1.0'),
 ]
 ```
 
