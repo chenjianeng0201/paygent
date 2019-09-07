@@ -2,6 +2,8 @@
 
 ## 包含信用卡支付和后支付
 
+![StyleCI build status](https://github.styleci.io/repos/206307156/shield) 
+
 ## 安装
 composer require chenjianeng0201/paygent:dev-master -vvv
 ## 配置
