@@ -25,6 +25,10 @@ class Paygent
      */
     public function __construct($env, $merchant_id, $connect_id, $connect_password, $pem, $crt, $telegram_version = '1.0')
     {
+        if (!in_array(strtolower($env), ['local', 'production'])) {
+            throw new InvalidArgumentException('Invalid response env: '.$env);
+        }
+
         // env => [local、production], pem => 证书路径, crt => 私钥路径
         $this->p = new PaygentB2BModule($env, $pem, $crt);
         $this->p->init();
