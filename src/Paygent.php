@@ -24,8 +24,7 @@ class Paygent
      * @param string $telegram_version 版本
      */
     public function __construct($env, $merchant_id, $connect_id, $connect_password, $pem, $crt, $telegram_version = '1.0')
-    {
-        if (!in_array(strtolower($env), ['local', 'production'])) {
+    {if (!in_array(strtolower($env), ['local', 'production'])) {
             throw new InvalidArgumentException('Invalid response env: ' . $env);
         }
 

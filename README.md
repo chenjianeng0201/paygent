@@ -82,5 +82,47 @@ $payment_id = 'xxxxxxx'; // 交易 id
 $result = $p->afterPayConfirm($delivery_company_code, $delivery_slip_no, $trading_id, $payment_id);
 ```
 
+## 在 Laravel 中使用
+在 Laravel 中使用也是同样的安装方式，配置写在 `config/services.php` 中
+```
+·
+·
+·
+'paygent' => [
+    'env' => env('PAYGENT_ENV', 'local'),
+    'merchant_id' => env('PAYGENT_MERCHANT_ID', ''),
+    'connect_id' => env('PAYGENT_CONNECT_ID', ''),
+    'connect_password' => env('PAYGENT_PASSWORD', ''),
+    'token' => env('PAYGENT_TOKEN', ''), // 备注：此 token 为前台页面获取信用卡 token 时使用
+    'pem' => env('PAYGENT_PEM', ''),
+    'crt' => env('PAYGENT_CRT', ''),
+]
+```
+
+然后在 `.env` 中配置以上参数
+
+方法参数注入
+```
+public function test(Paygent $paygent)
+{
+    $split_count = 'xxx'; // 分期数
+    $card_token = 'xxxxxxxxx'; // token
+    $trading_id = 'xxxxxxxx'; // 订单号
+    $payment_amount = 100; // 金额
+    $result = $paygent->paySend($split_count, $card_token, $trading_id, $payment_amount);
+}
+```
+
+服务器访问
+```
+public function test()
+{
+    $split_count = 'xxx'; // 分期数
+    $card_token = 'xxxxxxxxx'; // token
+    $trading_id = 'xxxxxxxx'; // 订单号
+    $payment_amount = 100; // 金额
+    $result = app('paygent')->paySend($split_count, $card_token, $trading_id, $payment_amount);
+}
+```
 
 **以下为腾讯云文档 <a href="https://dev.tencent.com/s/d6174133-c098-4426-83a6-307d0ee6608a">跳转</a>**
