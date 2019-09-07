@@ -4,7 +4,6 @@ namespace Chenjianeng0201\Paygent;
 
 require __DIR__.'/vendor/autoload.php';
 
-use Chenjianeng0201\Paygent\Exceptions\InvalidArgumentException;
 use PaygentModule\System\PaygentB2BModule;
 
 date_default_timezone_set('Asia/Tokyo');
