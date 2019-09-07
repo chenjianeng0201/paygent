@@ -2,7 +2,7 @@
 
 namespace Chenjianeng0201\Paygent;
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use Chenjianeng0201\Paygent\Exceptions\InvalidArgumentException;
 use PaygentModule\System\PaygentB2BModule;
@@ -26,7 +26,7 @@ class Paygent
     public function __construct($env, $merchant_id, $connect_id, $connect_password, $pem, $crt, $telegram_version = '1.0')
     {
         if (!in_array(strtolower($env), ['local', 'production'])) {
-            throw new InvalidArgumentException('Invalid response env: ' . $env);
+            throw new InvalidArgumentException('Invalid response env: '.$env);
         }
 
         // env => [local、production], pem => 证书路径, crt => 私钥路径
@@ -56,7 +56,7 @@ class Paygent
     {
         $this->p->reqPut('3dsecure_ryaku', 1);
 
-        $payment_class = "1" === $split_count ? 10 : 61;
+        $payment_class = '1' === $split_count ? 10 : 61;
         $this->p->reqPut('split_count', $split_count);
         $this->p->reqPut('payment_class', $payment_class);
         $this->p->reqPut('card_token', $card_token);
@@ -92,6 +92,7 @@ class Paygent
                 'payment_id' => $res['payment_id'],
                 'detail' => $this->iconv_parse($this->p->getResponseDetail()),
             ];
+
             return $response;
         }
     }
@@ -121,18 +122,17 @@ class Paygent
         $this->p->reqPut('trading_id', $trading_id);
         $this->p->reqPut('payment_amount', $payment_amount);
         $this->p->reqPut('shop_order_date', $shop_order_date);
-        $this->p->reqPut('customer_name_kanji', $this->iconv_parse2( preg_replace('/\\s+/','', $this->makeSemiangle($customer_name_kanji))));
-        $this->p->reqPut('customer_name_kana',  $this->iconv_parse2(preg_replace('/\\s+/','', $this->makeSemiangle($customer_name_kana))));
+        $this->p->reqPut('customer_name_kanji', $this->iconv_parse2(preg_replace('/\\s+/', '', $this->makeSemiangle($customer_name_kanji))));
+        $this->p->reqPut('customer_name_kana', $this->iconv_parse2(preg_replace('/\\s+/', '', $this->makeSemiangle($customer_name_kana))));
         $this->p->reqPut('customer_email', $this->makeSemiangle($customer_email));
         $this->p->reqPut('customer_zip_code', $this->makeSemiangle($customer_zip_code));
         $this->p->reqPut('customer_address', $this->iconv_parse2($this->makeSemiangle($customer_address)));
         $this->p->reqPut('customer_tel', $this->makeSemiangle($customer_tel));
 
-
         foreach ($goods_list as $key => $value) {
-            $this->p->reqPut('goods[' . $key . ']', $this->iconv_parse2($this->makeSemiangle($value['goods'])));
-            $this->p->reqPut('goods_price[' . $key . ']', $value['goods_price']);
-            $this->p->reqPut('goods_amount[' . $key . ']', $value['goods_amount']);
+            $this->p->reqPut('goods['.$key.']', $this->iconv_parse2($this->makeSemiangle($value['goods'])));
+            $this->p->reqPut('goods_price['.$key.']', $value['goods_price']);
+            $this->p->reqPut('goods_amount['.$key.']', $value['goods_amount']);
         }
 
         // 请求
@@ -184,8 +184,9 @@ class Paygent
                 'code' => 0,
                 'status' => $this->p->getResultStatus(),
                 'pay_code' => $this->p->getResponseCode(),
-                'detail' => $this->iconv_parse($this->p->getResponseDetail())
+                'detail' => $this->iconv_parse($this->p->getResponseDetail()),
             ];
+
             return $response;
         }
     }
@@ -219,8 +220,9 @@ class Paygent
                 'code' => 0,
                 'status' => $this->p->getResultStatus(),
                 'pay_code' => $this->p->getResponseCode(),
-                'detail' => $this->iconv_parse($this->p->getResponseDetail())
+                'detail' => $this->iconv_parse($this->p->getResponseDetail()),
             ];
+
             return $response;
         }
     }
@@ -251,7 +253,8 @@ class Paygent
             '：' => ':', '。' => '.', '、' => ',', '，' => '.', '、' => '.',
             '；' => ',', '？' => '?', '！' => '!', '…' => '-', '‖' => '|',
             '”' => '"', '’' => '`', '‘' => '`', '｜' => '|', '〃' => '"',
-            '　' => ' ', '『' => '', '』' => '', '･' => '');
+            '　' => ' ', '『' => '', '』' => '', '･' => '', );
+
         return strtr($str, $arr);
     }
 
@@ -274,5 +277,4 @@ class Paygent
     {
         return iconv('UTF-8', 'Shift_JIS', $str);
     }
-
 }
