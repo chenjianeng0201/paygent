@@ -22,7 +22,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->alias(Paygent::class, 'paygent');
     }
 
-    public function providers()
+    public function provides()
     {
         return [Paygent::class, 'paygent'];
     }
