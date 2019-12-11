@@ -273,6 +273,19 @@ $result = $p->afterPayConfirm($delivery_company_code, $delivery_slip_no, $tradin
 ```
 
 然后在 `.env` 中配置以上参数
+```
+PAYGENT_ENV=local
+PAYGENT_MERCHANT_ID=
+PAYGENT_CONNECT_ID=
+PAYGENT_CONNECT_PASSWORD=
+PAYGENT_TOKEN=
+PAYGENT_PEM=/Config/Paygent/Sandbox/xxxx.pem
+PAYGENT_CRT=/Config/Paygent/Sandbox/xxxxx.crt
+PAYGENT_TELEGRAM_VERSION=1.0
+```
+
+**备注**
+`PAYGENT_PEM` 和 `PAYGENT_CRT` 为证书密钥文件的位置
 
 方法参数注入
 ```
